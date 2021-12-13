@@ -2,6 +2,10 @@
 
 このリポジトリはCode Chrysalisの生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
 
+### Staging Server
+[Heroku - water-tracker-w-staging](https://water-tracker-w-staging.herokuapp.com/)
+[Heroku - water-tracker-w](https://water-tracker-w.herokuapp.com/)
+
 ## Project setup
 ```
 npm install
@@ -21,6 +25,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
