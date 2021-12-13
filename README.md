@@ -1,5 +1,7 @@
 # project_watar_tracker
 
+このリポジトリはCode Chrysalisの生徒であるときに作成しました（This was created during my time as a student at Code Chrysalis）
+
 ## Project setup
 ```
 npm install
