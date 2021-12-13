@@ -8,7 +8,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "migration:makeFiles": "knex migrate:make",
-    "migration:run": "knex migrate:latest"
+    "migration:run": "knex migrate:latest",
+    "seed:run": "knex seed:run"
   },
   "dependencies": {
     "core-js": "^3.6.5",
