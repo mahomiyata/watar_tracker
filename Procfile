@@ -1,3 +1,3 @@
-web: npm run migration:run
-web: npm run build
+release: npm run migration:run
+release: npm run build
 web: npm start
