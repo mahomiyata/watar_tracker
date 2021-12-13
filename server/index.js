@@ -1,7 +1,11 @@
 const express = require('express');
+const morgan = require('morgan')
 const path = require('path');
 
 const app = express();
+
+// Logger
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]'));
 
 // static resources
 app.use(express.static(path.join(__dirname, '../dist/')));
