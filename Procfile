@@ -1,3 +1,3 @@
 release: npm run migration:run
-release: npm run seed:run
+worker: npm run seed:run
 web: npm start
