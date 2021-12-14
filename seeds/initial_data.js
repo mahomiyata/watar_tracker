@@ -11,7 +11,11 @@ exports.seed = function(knex) {
         {id: 4, amount: 400, created_at: "2021-12-09"},
         {id: 5, amount: 500, created_at: "2021-12-10"},
         {id: 6, amount: 200, created_at: "2021-12-11"},
-        {id: 7, amount: 300, created_at: "2021-12-12"}
+        {id: 7, amount: 300, created_at: "2021-12-12"},
+        {id: 8, amount: 350, created_at: "2021-12-13"},
+        {id: 9, amount: 250, created_at: "2021-12-13"},
+        {id: 10, amount: 1000, created_at: "2021-12-14"},
+        {id: 11, amount: 100}
       ]);
     });
 };
