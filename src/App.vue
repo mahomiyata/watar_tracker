@@ -35,15 +35,12 @@ export default {
         .then(res => this.weeklyData = res)
         .then(() => {
           const today = new Date();
-          const JST = today.toJSON();
-          const regex = new RegExp(/T.*?Z/, 'g');
-          const JSTday = JST.replace(regex, '');
-
           const todayData = this.weeklyData.filter((item) => {
-            return item.created_at === JSTday;
+            const date = new Date(item.created_at);
+            return date.getMonth() === today.getMonth() && date.getDate() === today.getDate();
           });
           this.restAmount = 1500 - todayData[0].amount;
-        })
+        });
     }
   }
 }
