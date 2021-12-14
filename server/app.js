@@ -61,8 +61,12 @@ app.get('/api/water_amount/this_week', async (req, res) => {
 app.post('/api/water_amount', async (req, res) => {
   // Data sent to this endpoint: { amount: 200 }
   const data = req.body;
-  const result = await knex('amount_of_water').insert(data);
-  res.json({message: 'success'});
+  try {
+    await knex('amount_of_water').insert(data);
+    res.json(data);
+  } catch (error) {
+    res.sendStatus(500).send({message: 'fail...'});
+  }
 });
 
 module.exports = app;
