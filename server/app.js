@@ -54,7 +54,7 @@ app.get('/api/water_amount/this_week', async (req, res) => {
   }
   console.log(sumByDay);
   res.json(sumByDay);
-})
+});
 
 app.post('/api/water_amount', async (req, res) => {
   // Data sent to this endpoint: { amount: 200 }
