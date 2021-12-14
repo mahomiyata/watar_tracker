@@ -24,7 +24,8 @@ app.get('/api/water_amount/this_week', async (req, res) => {
   today.setDate(today.getDate() + 1);
   from.setHours(from.getHours() - 9);
   from.setDate(from.getDate() - 6);
-  const result = await knex('amount_of_water').whereBetween('created_at',[from.toDateString(), today.toDateString()]);
+  const result = await knex('amount_of_water').select();
+  // const result = await knex('amount_of_water').whereBetween('created_at',[from.toDateString(), today.toDateString()]);
   console.log(result);
 
   // {created_at: 日付, amount: 1500}
@@ -55,7 +56,8 @@ app.get('/api/water_amount/this_week', async (req, res) => {
     }
   }
   console.log(sumByDay);
-  res.json(sumByDay);
+  // res.json(sumByDay);
+  res.json(result);
 })
 
 app.post('/api/water_amount', async (req, res) => {
