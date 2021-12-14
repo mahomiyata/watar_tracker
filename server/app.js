@@ -63,9 +63,9 @@ app.post('/api/water_amount', async (req, res) => {
   const data = req.body;
   try {
     await knex('amount_of_water').insert(data);
-    res.json(data);
+    return res.json(data);
   } catch (error) {
-    res.sendStatus(500).send({message: 'fail...'});
+    return res.sendStatus(500).send({message: error});
   }
 });
 
