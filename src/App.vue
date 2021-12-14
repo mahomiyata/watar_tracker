@@ -17,7 +17,7 @@ export default {
   data: () => ({
     amount: 0,
     weeklyData: [],
-    restAmount: 0,
+    restAmount: 1500,
     chartData: {
       type: "line",
       data: {
@@ -74,7 +74,7 @@ export default {
             const date = new Date(item.created_at);
             return date.getMonth() === today.getMonth() && date.getDate() === today.getDate();
           });
-          this.restAmount = 1500 - todayData[0].amount;
+          this.restAmount -= todayData[0].amount;
 
           // Set data to chart.js
           const labels = this.weeklyData.map(item => item.created_at);
