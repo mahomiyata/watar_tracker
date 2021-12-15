@@ -22,8 +22,9 @@ app.get('/api/water_amount/this_week', async (req, res) => {
   const from = new Date();
   today.setDate(today.getDate() + 1);
   from.setDate(from.getDate() - 6);
-  const result = await knex('amount_of_water').whereBetween('created_at',[from.toDateString(), today.toDateString()]);
-  console.log(result);
+  const result = await knex('amount_of_water')
+      .whereBetween('created_at',[from.toDateString(), today.toDateString()])
+      .orderBy('id', 'asc');
 
   // {created_at: 日付, amount: 1500}
   const sumByDay = [];
@@ -52,7 +53,6 @@ app.get('/api/water_amount/this_week', async (req, res) => {
       sumByDay.push({ created_at: JSTday, amount: result[i].amount });
     }
   }
-  console.log(sumByDay);
   res.json(sumByDay);
 });
 
