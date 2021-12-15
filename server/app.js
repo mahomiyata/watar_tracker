@@ -4,18 +4,13 @@ const knex = require('./knex');
 const path = require('path');
 
 const app = express();
+app.use(express.json());
 
 // Logger
 app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length]'));
-app.use(express.json());
 
 // static resources
 app.use(express.static(path.join(__dirname, '../dist/')));
-
-// TODO: Delete this endpoint!
-app.get('/api/hi',(req,res) => {
-  res.send('hello!');
-});
 
 app.get('/api/water_amount/this_week', async (req, res) => {
   const today = new Date();
