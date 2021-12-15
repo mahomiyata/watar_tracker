@@ -1,20 +1,26 @@
 <template>
   <div id="app">
     <div class="header">
-      <h1>Daily Water Tracker</h1>
-      <p>毎日1500mlを目標に水分をとりましょう！</p>
+      <section class="inner">
+        <h1>Daily Water Tracker</h1>
+        <p>毎日1500mlを目標に水分をとりましょう！</p>
+      </section>
     </div>
-    <div class="form">
-      <p>飲んだ量を記録する</p>
-      <input type="text" v-model="amount">
-      <button v-on:click="postAmount">Send</button>
+    <div class="inner card">
+      <section class="form">
+        <p>飲んだ量を記録する</p>
+        <form>
+          <input type="text" v-model="amount">
+          <button v-on:click="postAmount">Send</button>
+        </form>
+      </section>
     </div>
-    <div class="status">
+    <div class="status inner card">
       <p v-if="restAmount > 0"> 1500mlまであと <span class="large-txt"> {{restAmount}} ml </span>だよ </p>
-      <p v-if="restAmount <= 0"> 達成 🎉 </p>
+      <p v-if="restAmount <= 0" class="large-txt"> 達成 🎉 </p>
       <canvas id="pie-chart" width="500px" height="auto"></canvas>
     </div>
-    <div>
+    <div class="inner card">
       <h2>Weekly Summary</h2>
       <canvas id="weekly-chart"></canvas>
     </div>
@@ -128,23 +134,46 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Nunito:wght@400;700&family=Readex+Pro:wght@400;700&display=swap');
-#app {
-  font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
+body {
+  margin: 0;
+}
+p {
+  margin-top: 0;
+}
+.inner {
   width: 80%;
   margin: 0 auto;
+}
+.card {
+  background: #Fff;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #d9d9d9;
+  padding: 35px 20px;
+  margin-bottom: 30px;
+  color: #333;
+}
+#app {
+  font-family: 'Nunito', 'M PLUS Rounded 1c', sans-serif;
   text-align: center;
+  background: #f7f7f7;
+  padding-bottom: 30px;
 }
 .header {
-  margin: 50px 0;
+  padding: 50px 0;
+  background-color: #00639c;
+  background-image: linear-gradient(160deg, #00639c 0%, #75bdb5 100%);
+  color: #fff;
+  margin-bottom: 30px;
 }
 .header h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
 .form {
-  border-bottom: 1px solid;
   display: inline-block;
-  margin-bottom: 50px;
+}
+.form form {
+  border-bottom: 1px solid rgba(0, 40, 151, 0.69);
 }
 .form input {
   border: none;
@@ -155,6 +184,8 @@ export default {
   padding: 9px;
   border-radius: 3px;
   cursor: pointer;
+  background: rgba(0, 40, 151, 0.69);
+  color: #fff;
 }
 .status {
   margin-bottom: 50px;
