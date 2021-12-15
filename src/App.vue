@@ -2,7 +2,8 @@
   <div id="app">
     <input type="text" v-model="amount">
     <button v-on:click="postAmount">Send</button>
-    <p> あと {{restAmount}} ml だよ</p>
+    <p v-if="restAmount > 0"> あと {{restAmount}} ml だよ</p>
+    <p v-if="restAmount <= 0"> 達成 🎉 </p>
     <div>
       <canvas id="weekly-chart"></canvas>
     </div>
