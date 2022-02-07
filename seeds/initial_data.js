@@ -5,17 +5,17 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('amount_of_water').insert([
-        {id: 1, amount: 200, created_at: "2021-12-06"},
-        {id: 2, amount: 1000, created_at: "2021-12-07"},
-        {id: 3, amount: 500, created_at: "2021-12-08"},
-        {id: 4, amount: 400, created_at: "2021-12-09"},
-        {id: 5, amount: 500, created_at: "2021-12-10"},
-        {id: 6, amount: 200, created_at: "2021-12-11"},
-        {id: 7, amount: 300, created_at: "2021-12-12"},
-        {id: 8, amount: 350, created_at: "2021-12-13"},
-        {id: 9, amount: 250, created_at: "2021-12-13"},
-        {id: 10, amount: 1000, created_at: "2021-12-14"},
-        {id: 11, amount: 100}
+        {amount: 200, created_at: "2021-12-06"},
+        {amount: 1000, created_at: "2021-12-07"},
+        {amount: 500, created_at: "2021-12-08"},
+        {amount: 400, created_at: "2021-12-09"},
+        {amount: 500, created_at: "2021-12-10"},
+        {amount: 200, created_at: "2021-12-11"},
+        {amount: 300, created_at: "2021-12-12"},
+        {amount: 350, created_at: "2021-12-13"},
+        {amount: 250, created_at: "2021-12-13"},
+        {amount: 1000, created_at: "2021-12-14"},
+        {amount: 100}
       ]);
     });
 };
