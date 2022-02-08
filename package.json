@@ -41,6 +41,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^27.4.4",
     "nodemon": "^2.0.15",
+    "prettier": "2.5.1",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
